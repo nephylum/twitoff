@@ -8,7 +8,9 @@ def create_app():
     app = Flask(__name__)
 
     #add config for the database
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:\\Users\\eneph\\twitoff\\TWITO\\db.sqlite3'
+    app.config['SQLALCHEMY_DATABASE_URI'] = config('DATABASE_URL')
+    #stop tracking modifications on sqlalchemy config
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
     #have the database know the about the app
     DB.init_app(app)
 
