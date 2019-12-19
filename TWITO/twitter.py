@@ -35,7 +35,7 @@ def add_or_update_user(username):
 
     except Exception as e:
         print('Error processing {}: {}'.format(username,e))
-        raise # -*- coding: utf-8 -*-
+        raise e
     else:
         DB.session.commit()
 

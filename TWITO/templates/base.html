@@ -10,9 +10,9 @@
  <body>
    <h1>Twitoff is awesome.</h1>
 
-  {% block content %}
+ {% block content %}
  <form action="/user" method="post">
-   <input type="text" name="user_name" placeholder="User">
+   <input type="text" name="user_name" placeholder="User to add">
    <input type="submit" value="add"
  </form>
 
@@ -21,16 +21,16 @@
     {% for user in users %}
     <option value="{{ user.name }}">{{ user.name }}</option>
     {% endfor %}
-    <select>
-    <select name="user2">
-      {% for user in users %}
-      <option value="{{ user.name }}">{{ user.name }}</option>
-      {% endfor %}
-    </select>
-    <input type="text" name="tweet" placeholder="Tweet text to predict">
+  </select>
+  <select name="user2">
+    {% for user in users %}
+    <option value="{{ user.name }}">{{ user.name }}</option>
+    {% endfor %}
+  </select>
+    <input type="text" name="tweet_text" placeholder="Tweet text to predict">
     <input type="submit" value="Compare Users">
   </form>
 
- {% endblock %}
+  {% endblock %}
 </body>
 </html>
