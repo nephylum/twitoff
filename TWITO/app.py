@@ -58,5 +58,7 @@ def create_app():
             request.values['tweet_text'], user1 if prediction else user2,
             user2 if prediction else user1
             )
+        return render_template('prediction.html',title="prediction",
+                                message=message)
 
     return app
